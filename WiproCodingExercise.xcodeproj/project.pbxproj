@@ -14,6 +14,7 @@
 		89E4C9DB24ED08F200C3BDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E4C9DA24ED08F200C3BDDA /* Assets.xcassets */; };
 		89E4C9DE24ED08F200C3BDDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E4C9DC24ED08F200C3BDDA /* LaunchScreen.storyboard */; };
 		89E4C9E924ED08F300C3BDDA /* WiproCodingExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4C9E824ED08F300C3BDDA /* WiproCodingExerciseTests.swift */; };
+		89E4C9FE24ED0B1800C3BDDA /* ClientAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4C9FD24ED0B1800C3BDDA /* ClientAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		89E4C9E424ED08F300C3BDDA /* WiproCodingExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiproCodingExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E4C9E824ED08F300C3BDDA /* WiproCodingExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiproCodingExerciseTests.swift; sourceTree = "<group>"; };
 		89E4C9EA24ED08F300C3BDDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E4C9FD24ED0B1800C3BDDA /* ClientAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,16 @@
 		89E4C9D024ED08EB00C3BDDA /* WiproCodingExercise */ = {
 			isa = PBXGroup;
 			children = (
+				89E4C9FC24ED0ADB00C3BDDA /* Model */,
+				89E4C9FB24ED0AD400C3BDDA /* ViewModel */,
+				89E4C9FA24ED0ACC00C3BDDA /* UserInterface */,
+				89E4C9F924ED0AC300C3BDDA /* AppDelegate */,
+				89E4C9F824ED0AB900C3BDDA /* Resources */,
+				89E4C9F724ED0AB100C3BDDA /* Controllers */,
+				89E4C9F624ED0AA800C3BDDA /* Cells */,
+				89E4C9F524ED0A8A00C3BDDA /* Services */,
+				89E4C9F424ED0A7C00C3BDDA /* Extensions */,
+				89E4C9F324ED0A6E00C3BDDA /* Constants */,
 				89E4C9D124ED08EB00C3BDDA /* AppDelegate.swift */,
 				89E4C9D324ED08EB00C3BDDA /* SceneDelegate.swift */,
 				89E4C9D524ED08EB00C3BDDA /* ViewController.swift */,
@@ -97,6 +109,77 @@
 				89E4C9EA24ED08F300C3BDDA /* Info.plist */,
 			);
 			path = WiproCodingExerciseTests;
+			sourceTree = "<group>";
+		};
+		89E4C9F324ED0A6E00C3BDDA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		89E4C9F424ED0A7C00C3BDDA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89E4C9F524ED0A8A00C3BDDA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				89E4C9FD24ED0B1800C3BDDA /* ClientAPIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		89E4C9F624ED0AA800C3BDDA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		89E4C9F724ED0AB100C3BDDA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		89E4C9F824ED0AB900C3BDDA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		89E4C9F924ED0AC300C3BDDA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		89E4C9FA24ED0ACC00C3BDDA /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		89E4C9FB24ED0AD400C3BDDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		89E4C9FC24ED0ADB00C3BDDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E4C9D624ED08EB00C3BDDA /* ViewController.swift in Sources */,
+				89E4C9FE24ED0B1800C3BDDA /* ClientAPIManager.swift in Sources */,
 				89E4C9D224ED08EB00C3BDDA /* AppDelegate.swift in Sources */,
 				89E4C9D424ED08EB00C3BDDA /* SceneDelegate.swift in Sources */,
 			);
