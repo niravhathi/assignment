@@ -16,6 +16,9 @@
 		893D9FD824EE6B9500B6C1EF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FD724EE6B9500B6C1EF /* NetworkManager.swift */; };
 		893D9FDB24EEB33C00B6C1EF /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FD924EEB33C00B6C1EF /* ListTableViewCell.swift */; };
 		893D9FDC24EEB33C00B6C1EF /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893D9FDA24EEB33C00B6C1EF /* ListTableViewCell.xib */; };
+		893D9FDE24EEEAFC00B6C1EF /* TrackDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FDD24EEEAFC00B6C1EF /* TrackDetails.swift */; };
+		893D9FE024EEEFD900B6C1EF /* AlbumDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FDF24EEEFD900B6C1EF /* AlbumDetails.swift */; };
+		893D9FE224EEF20300B6C1EF /* ArtistDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FE124EEF20300B6C1EF /* ArtistDetails.swift */; };
 		89C4BC7E24ED326200657721 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C4BC7D24ED326200657721 /* Constants.swift */; };
 		89E4C9D224ED08EB00C3BDDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4C9D124ED08EB00C3BDDA /* AppDelegate.swift */; };
 		89E4C9D424ED08EB00C3BDDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4C9D324ED08EB00C3BDDA /* SceneDelegate.swift */; };
@@ -48,6 +51,9 @@
 		893D9FD724EE6B9500B6C1EF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		893D9FD924EEB33C00B6C1EF /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		893D9FDA24EEB33C00B6C1EF /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		893D9FDD24EEEAFC00B6C1EF /* TrackDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetails.swift; sourceTree = "<group>"; };
+		893D9FDF24EEEFD900B6C1EF /* AlbumDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetails.swift; sourceTree = "<group>"; };
+		893D9FE124EEF20300B6C1EF /* ArtistDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetails.swift; sourceTree = "<group>"; };
 		89C4BC7D24ED326200657721 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		89E4C9CE24ED08EB00C3BDDA /* WiproCodingExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiproCodingExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E4C9D124ED08EB00C3BDDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +220,9 @@
 				893D9FCD24ED635C00B6C1EF /* Artists.swift */,
 				893D9FD124EE510A00B6C1EF /* Tracks.swift */,
 				893D9FD324EE533F00B6C1EF /* Albums.swift */,
+				893D9FDD24EEEAFC00B6C1EF /* TrackDetails.swift */,
+				893D9FDF24EEEFD900B6C1EF /* AlbumDetails.swift */,
+				893D9FE124EEF20300B6C1EF /* ArtistDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,10 +421,13 @@
 				89E4C9D624ED08EB00C3BDDA /* SearchViewController.swift in Sources */,
 				893D9FD824EE6B9500B6C1EF /* NetworkManager.swift in Sources */,
 				893D9FCE24ED635C00B6C1EF /* Artists.swift in Sources */,
+				893D9FE224EEF20300B6C1EF /* ArtistDetails.swift in Sources */,
 				893D9FD424EE533F00B6C1EF /* Albums.swift in Sources */,
 				89E4C9FE24ED0B1800C3BDDA /* ClientAPIManager.swift in Sources */,
 				89E4C9D224ED08EB00C3BDDA /* AppDelegate.swift in Sources */,
+				893D9FDE24EEEAFC00B6C1EF /* TrackDetails.swift in Sources */,
 				893D9FD624EE6A3700B6C1EF /* SearchViewModel.swift in Sources */,
+				893D9FE024EEEFD900B6C1EF /* AlbumDetails.swift in Sources */,
 				89E4C9D424ED08EB00C3BDDA /* SceneDelegate.swift in Sources */,
 				893D9FD224EE510A00B6C1EF /* Tracks.swift in Sources */,
 			);
