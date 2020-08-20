@@ -18,6 +18,12 @@ let apiKeyValue = "424d92721e510ef6e619278215313bc3"
 let pageNumberKey = "page"
 let formatKey = "format"
 let methodKey =  "method"
+let keyWindow = UIApplication.shared.connectedScenes
+    .filter({$0.activationState == .foregroundActive})
+    .map({$0 as? UIWindowScene})
+    .compactMap({$0})
+    .first?.windows
+    .filter({$0.isKeyWindow}).first
 enum SearchTerm: String, CaseIterable {
     case album = "Album"
     case track = "Track"

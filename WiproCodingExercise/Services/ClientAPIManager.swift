@@ -30,7 +30,7 @@ class ClientAPIManager: NSObject {
         components.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)
         }
-        
+        urlSession.invalidateAndCancel()
         urlSession.dataTask(with: components.url!) { (data, response, error) in
 
             guard error == nil
@@ -42,9 +42,8 @@ class ClientAPIManager: NSObject {
                     return completionFailure(.parsingError(error: error?.localizedDescription ?? "There are no new Items to show"))
             }
             do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers]) as? [String: AnyObject] {
+                if let _ = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers]) as? [String: AnyObject] {
                     completionSuccess(data)
-
                 }
             } catch let error {
 
