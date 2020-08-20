@@ -1,8 +1,8 @@
 //
 //  ClientAPIManager.swift
-//  TickledAssignment
+//  WiproCodingExercise
 //
-//  Created by Nirav Hathi on 7/7/20.
+//  Created by Nirav Hathi on 8/19/20.
 //  Copyright © 2020 Nirav Hathi. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ enum APIError: Swift.Error {
 class ClientAPIManager: NSObject {
     private let urlSession = URLSession.shared
     var cachedUrl: URL?
-    func getDataWith(for URLEndPoint:String, parameters: [String: String], completionSuccess: @escaping ([String : AnyObject]) -> Void, completionFailure: @escaping (APIError) -> Void) {
+    func getDataWith(for URLEndPoint:String, parameters: [String: String], completionSuccess: @escaping (Data) -> Void, completionFailure: @escaping (APIError) -> Void) {
         guard let url = URL(
                 string:URLEndPoint
             ) else {
@@ -43,7 +43,7 @@ class ClientAPIManager: NSObject {
             }
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers]) as? [String: AnyObject] {
-                    completionSuccess(json)
+                    completionSuccess(data)
 
                 }
             } catch let error {
@@ -52,8 +52,6 @@ class ClientAPIManager: NSObject {
             }
             }.resume()
     }
-    
-    
 }
 let imageCache = NSCache<AnyObject, AnyObject>()
 

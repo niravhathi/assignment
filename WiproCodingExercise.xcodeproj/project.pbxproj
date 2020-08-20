@@ -3,15 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		285C961B6FAEC0A2E54FAA5E /* Pods_WiproCodingExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8BBBA7EF8658F5F89BADD9 /* Pods_WiproCodingExercise.framework */; };
 		6E64BEAE7206F15164F43412 /* Pods_WiproCodingExerciseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54DCACD07A4FEA25395C4BA2 /* Pods_WiproCodingExerciseTests.framework */; };
+		893D9FCE24ED635C00B6C1EF /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FCD24ED635C00B6C1EF /* Artists.swift */; };
+		893D9FD224EE510A00B6C1EF /* Tracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FD124EE510A00B6C1EF /* Tracks.swift */; };
+		893D9FD424EE533F00B6C1EF /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FD324EE533F00B6C1EF /* Albums.swift */; };
+		893D9FD624EE6A3700B6C1EF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FD524EE6A3700B6C1EF /* SearchViewModel.swift */; };
+		893D9FD824EE6B9500B6C1EF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FD724EE6B9500B6C1EF /* NetworkManager.swift */; };
+		893D9FDB24EEB33C00B6C1EF /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D9FD924EEB33C00B6C1EF /* ListTableViewCell.swift */; };
+		893D9FDC24EEB33C00B6C1EF /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893D9FDA24EEB33C00B6C1EF /* ListTableViewCell.xib */; };
+		89C4BC7E24ED326200657721 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C4BC7D24ED326200657721 /* Constants.swift */; };
 		89E4C9D224ED08EB00C3BDDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4C9D124ED08EB00C3BDDA /* AppDelegate.swift */; };
 		89E4C9D424ED08EB00C3BDDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4C9D324ED08EB00C3BDDA /* SceneDelegate.swift */; };
-		89E4C9D624ED08EB00C3BDDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4C9D524ED08EB00C3BDDA /* ViewController.swift */; };
+		89E4C9D624ED08EB00C3BDDA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4C9D524ED08EB00C3BDDA /* SearchViewController.swift */; };
 		89E4C9D924ED08EB00C3BDDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E4C9D724ED08EB00C3BDDA /* Main.storyboard */; };
 		89E4C9DB24ED08F200C3BDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E4C9DA24ED08F200C3BDDA /* Assets.xcassets */; };
 		89E4C9DE24ED08F200C3BDDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E4C9DC24ED08F200C3BDDA /* LaunchScreen.storyboard */; };
@@ -33,10 +41,18 @@
 		028BB264E1BD1049E0D72E83 /* Pods-WiproCodingExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiproCodingExercise.debug.xcconfig"; path = "Target Support Files/Pods-WiproCodingExercise/Pods-WiproCodingExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		54DCACD07A4FEA25395C4BA2 /* Pods_WiproCodingExerciseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiproCodingExerciseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8BBBA7EF8658F5F89BADD9 /* Pods_WiproCodingExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiproCodingExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		893D9FCD24ED635C00B6C1EF /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
+		893D9FD124EE510A00B6C1EF /* Tracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracks.swift; sourceTree = "<group>"; };
+		893D9FD324EE533F00B6C1EF /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
+		893D9FD524EE6A3700B6C1EF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		893D9FD724EE6B9500B6C1EF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		893D9FD924EEB33C00B6C1EF /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		893D9FDA24EEB33C00B6C1EF /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		89C4BC7D24ED326200657721 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		89E4C9CE24ED08EB00C3BDDA /* WiproCodingExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiproCodingExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E4C9D124ED08EB00C3BDDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E4C9D324ED08EB00C3BDDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		89E4C9D524ED08EB00C3BDDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89E4C9D524ED08EB00C3BDDA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		89E4C9D824ED08EB00C3BDDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89E4C9DA24ED08F200C3BDDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89E4C9DD24ED08F200C3BDDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,12 +119,6 @@
 				89E4C9F524ED0A8A00C3BDDA /* Services */,
 				89E4C9F424ED0A7C00C3BDDA /* Extensions */,
 				89E4C9F324ED0A6E00C3BDDA /* Constants */,
-				89E4C9D124ED08EB00C3BDDA /* AppDelegate.swift */,
-				89E4C9D324ED08EB00C3BDDA /* SceneDelegate.swift */,
-				89E4C9D524ED08EB00C3BDDA /* ViewController.swift */,
-				89E4C9D724ED08EB00C3BDDA /* Main.storyboard */,
-				89E4C9DA24ED08F200C3BDDA /* Assets.xcassets */,
-				89E4C9DC24ED08F200C3BDDA /* LaunchScreen.storyboard */,
 				89E4C9DF24ED08F200C3BDDA /* Info.plist */,
 			);
 			path = WiproCodingExercise;
@@ -126,6 +136,7 @@
 		89E4C9F324ED0A6E00C3BDDA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				89C4BC7D24ED326200657721 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				89E4C9FD24ED0B1800C3BDDA /* ClientAPIManager.swift */,
+				893D9FD724EE6B9500B6C1EF /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -148,6 +160,8 @@
 		89E4C9F624ED0AA800C3BDDA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				893D9FD924EEB33C00B6C1EF /* ListTableViewCell.swift */,
+				893D9FDA24EEB33C00B6C1EF /* ListTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -155,6 +169,7 @@
 		89E4C9F724ED0AB100C3BDDA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				89E4C9D524ED08EB00C3BDDA /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +177,7 @@
 		89E4C9F824ED0AB900C3BDDA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				89E4C9DA24ED08F200C3BDDA /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -169,6 +185,8 @@
 		89E4C9F924ED0AC300C3BDDA /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				89E4C9D124ED08EB00C3BDDA /* AppDelegate.swift */,
+				89E4C9D324ED08EB00C3BDDA /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -176,6 +194,8 @@
 		89E4C9FA24ED0ACC00C3BDDA /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				89E4C9D724ED08EB00C3BDDA /* Main.storyboard */,
+				89E4C9DC24ED08F200C3BDDA /* LaunchScreen.storyboard */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -183,6 +203,7 @@
 		89E4C9FB24ED0AD400C3BDDA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				893D9FD524EE6A3700B6C1EF /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +211,9 @@
 		89E4C9FC24ED0ADB00C3BDDA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				893D9FCD24ED635C00B6C1EF /* Artists.swift */,
+				893D9FD124EE510A00B6C1EF /* Tracks.swift */,
+				893D9FD324EE533F00B6C1EF /* Albums.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,7 +235,6 @@
 				EF83A029BDECA98D2EABBD24 /* Pods-WiproCodingExerciseTests.debug.xcconfig */,
 				E309E08134F30C5E0F7A2181 /* Pods-WiproCodingExerciseTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -300,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E4C9DE24ED08F200C3BDDA /* LaunchScreen.storyboard in Resources */,
+				893D9FDC24EEB33C00B6C1EF /* ListTableViewCell.xib in Resources */,
 				89E4C9DB24ED08F200C3BDDA /* Assets.xcassets in Resources */,
 				89E4C9D924ED08EB00C3BDDA /* Main.storyboard in Resources */,
 			);
@@ -383,10 +407,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89E4C9D624ED08EB00C3BDDA /* ViewController.swift in Sources */,
+				893D9FDB24EEB33C00B6C1EF /* ListTableViewCell.swift in Sources */,
+				89C4BC7E24ED326200657721 /* Constants.swift in Sources */,
+				89E4C9D624ED08EB00C3BDDA /* SearchViewController.swift in Sources */,
+				893D9FD824EE6B9500B6C1EF /* NetworkManager.swift in Sources */,
+				893D9FCE24ED635C00B6C1EF /* Artists.swift in Sources */,
+				893D9FD424EE533F00B6C1EF /* Albums.swift in Sources */,
 				89E4C9FE24ED0B1800C3BDDA /* ClientAPIManager.swift in Sources */,
 				89E4C9D224ED08EB00C3BDDA /* AppDelegate.swift in Sources */,
+				893D9FD624EE6A3700B6C1EF /* SearchViewModel.swift in Sources */,
 				89E4C9D424ED08EB00C3BDDA /* SceneDelegate.swift in Sources */,
+				893D9FD224EE510A00B6C1EF /* Tracks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
