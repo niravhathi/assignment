@@ -21,9 +21,11 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
         definesPresentationContext = true
         searchController.searchBar.scopeButtonTitles = SearchTerm.allCases.map { $0.rawValue }
         searchController.searchBar.delegate = self
+        
         self.tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
-        navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     // MARK: - Table view data source
@@ -35,15 +37,26 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
-            cell.bindAlbum(album: self.searchViewModel.albums?.results?.albummatches?.album?[indexPath.row])
+            if let album = self.searchViewModel.albums?.results?.albummatches?.album?[indexPath.row] {
+                cell.bindAlbum(album: album)
+            }
+            
         case 1:
-            cell.bindTrack(track: self.searchViewModel.tracks?.results?.trackmatches?.track?[indexPath.row])
+            if let track = self.searchViewModel.tracks?.results?.trackmatches?.track?[indexPath.row] {
+                cell.bindTrack(track: track)
+            }
         case 2:
-            cell.bindArtist(artist: self.searchViewModel.artists?.results?.artistmatches?.artist?[indexPath.row])
+            if let artist = self.searchViewModel.artists?.results?.artistmatches?.artist?[indexPath.row] {
+                cell.bindArtist(artist: artist)
+            }
         default:
             break;
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: SegueConstants.showDetailViewController, sender: nil)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -106,6 +119,28 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
         }
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueConstants.showDetailViewController {
+            let detailViewController = segue.destination as? DetailViewController
+            let index = self.searchController.searchBar.selectedScopeButtonIndex
+            if index == 0 {
+                if let album = self.searchViewModel.albums?.results?.albummatches?.album?[sender as? Int ?? 0] {
+                    detailViewController?.detailViewModel.mbid = album.mbid
+                    detailViewController?.type = .album
+                }
+            } else if index == 1 {
+                if let track = self.searchViewModel.tracks?.results?.trackmatches?.track?[sender as? Int ?? 0] {
+                    detailViewController?.detailViewModel.mbid = track.mbid
+                    detailViewController?.type = .track
+                }
+            } else {
+                if let artist = self.searchViewModel.artists?.results?.artistmatches?.artist?[sender as? Int ?? 0] {
+                    detailViewController?.detailViewModel.mbid = artist.mbid
+                    detailViewController?.type = .artist
+                }
+            }
+        }
+    }
 }
 extension SearchViewController: UISearchBarDelegate {
     
@@ -114,5 +149,6 @@ extension SearchViewController: UISearchBarDelegate {
         self.title = searchBar.scopeButtonTitles?[searchBar.selectedScopeButtonIndex] ?? ""
         tableView.reloadData()
     }
+    
 }
 

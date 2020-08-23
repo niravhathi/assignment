@@ -18,6 +18,7 @@ let apiKeyValue = "424d92721e510ef6e619278215313bc3"
 let pageNumberKey = "page"
 let formatKey = "format"
 let methodKey =  "method"
+let mbidKey = "mbid"
 let keyWindow = UIApplication.shared.connectedScenes
     .filter({$0.activationState == .foregroundActive})
     .map({$0 as? UIWindowScene})
@@ -30,15 +31,6 @@ enum SearchTerm: String, CaseIterable {
     case artist = "Artist"
 }
 
-extension SearchTerm {
-    var path: String {
-        switch self {
-        case .artist:
-            return "method=artist.search"
-        case .track:
-            return "method=track.search"
-        case .album:
-            return "method=album.search"
-        }
-    }
+struct SegueConstants {
+    static let showDetailViewController = "ShowDetailViewController"
 }

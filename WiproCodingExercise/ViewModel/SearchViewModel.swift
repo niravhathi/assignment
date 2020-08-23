@@ -23,8 +23,6 @@ class SearchViewModel {
     
     func fetchDataArtists(searchText: String, completion: @escaping (Bool) -> Void) {
         let parameters = [apiKey:apiKeyValue, formatKey: "json", SearchTerm.artist.rawValue: searchText, methodKey: "artist.search"]
-        if NetworkManager.shared.isReachableNetwork() {
-            //KRProgressHUD.show()
             clientAPIManager.getDataWith(for: endPoint, parameters: parameters, completionSuccess: { (result) in
                  //KRProgressHUD.dismiss()
                 do {
@@ -38,60 +36,38 @@ class SearchViewModel {
                 completion(false)
                 //KRProgressHUD.dismiss()
             }
-        } else {
-            completion(false)
-            //KRProgressHUD.dismiss()
-        }
     }
     
     func fetchDataTracks(searchText: String, completion: @escaping (Bool) -> Void) {
         let parameters = [apiKey:apiKeyValue, formatKey: "json", SearchTerm.track.rawValue: searchText, methodKey: "track.search"]
-        if NetworkManager.shared.isReachableNetwork() {
-            //KRProgressHUD.show()
-           
             clientAPIManager.getDataWith(for: endPoint, parameters: parameters, completionSuccess: { (result) in
-                 //KRProgressHUD.dismiss()
                 do {
                     self.tracks = try Tracks(data: result)
                     completion(true)
                 } catch {
                     completion(false)
-                   
                 }
                
             }) { (error) in
-                //KRProgressHUD.dismiss()
                 completion(false)
-               
             }
-        } else {
-            completion(false)
-            //KRProgressHUD.dismiss()
-        }
     }
     
     func fetchDataAlbums(searchText: String, completion: @escaping (Bool) -> Void) {
         let parameters = [apiKey:apiKeyValue, formatKey: "json", SearchTerm.album.rawValue: searchText, methodKey: "album.search"]
-        if NetworkManager.shared.isReachableNetwork() {
-            //KRProgressHUD.show()
+      
             clientAPIManager.getDataWith(for: endPoint, parameters: parameters, completionSuccess: { (result) in
-                 //KRProgressHUD.dismiss()
                 do {
                     self.albums = try Albums(data: result)
                     completion(true)
                 } catch {
                     completion(false)
-                  
                 }
                
             }) { (error) in
-                //KRProgressHUD.dismiss()
+               
                 completion(false)
             }
-        } else {
-            completion(false)
-            //KRProgressHUD.dismiss()
-        }
     }
     func getCount(searchTerm: SearchTerm) -> Int {
         switch searchTerm {
