@@ -27,7 +27,7 @@ class ImageTableViewCell: UITableViewCell {
     func setImageData(type: SearchTerm, album: AlbumDetails?, track: TrackDetails?, artist: ArtistDetails?) {
         switch type {
         case .album:
-            if let strUrl = album?.album?.image?[3].text {
+            if let strUrl = album?.album?.image?[3].textString {
                 if let imgUrl = URL(string: strUrl) {
                     backdrop.loadImageWithUrl(imgUrl)
                 }
@@ -35,7 +35,7 @@ class ImageTableViewCell: UITableViewCell {
             self.titleLabel.text = album?.album?.name
             break
         case .track:
-            if let strUrl = track?.track?.album?.image?[3].text {
+            if let strUrl = track?.track?.album?.image?[3].textString {
                 if let imgUrl = URL(string: strUrl) {
                     backdrop.loadImageWithUrl(imgUrl)
                 }
@@ -43,7 +43,7 @@ class ImageTableViewCell: UITableViewCell {
             self.titleLabel.text = track?.track?.name
             break
         case .artist:
-            if let strUrl = artist?.artist?.image?[3].text {
+            if let strUrl = artist?.artist?.image?[3].textString {
                 if let imgUrl = URL(string: strUrl) {
                     backdrop.loadImageWithUrl(imgUrl)
                 }
@@ -51,7 +51,5 @@ class ImageTableViewCell: UITableViewCell {
             self.titleLabel.text = artist?.artist?.name
             break
         }
-//
-//        self.titleLabel.text = name
     }
 }

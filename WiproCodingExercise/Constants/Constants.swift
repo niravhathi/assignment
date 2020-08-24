@@ -34,3 +34,14 @@ enum SearchTerm: String, CaseIterable {
 struct SegueConstants {
     static let showDetailViewController = "ShowDetailViewController"
 }
+
+enum CellType {
+    case name
+    case bio
+    case list
+    case tag
+    case artist
+    case date
+    case publish
+    case content
+}

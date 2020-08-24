@@ -30,5 +30,26 @@ class WiproCodingExerciseTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    func testGetAlbumWithExpectedURLHostAndPath() {
+        let searchViewModel = SearchViewModel()
+        let mockURLSession  = ClientAPIManager()
+        searchViewModel.clientAPIManager = mockURLSession
+        searchViewModel.fetchDataAlbums(searchText: "paramore") { (bool) in
+        }
+        XCTAssertEqual(mockURLSession.cachedUrl?.host, "ws.audioscrobbler.com")
+    }
+    func testGetMoviesWhenEmptyDataReturnsError() {
+        let mockURLSession  = ClientAPIManager()
+        let errorExpectation = expectation(description: "error")
+        var errorResponse: Error?
+        mockURLSession.getDataWith(for: "", parameters: [:], completionSuccess: { (result) in
+        }) { (error) in
+            errorResponse = error
+            errorExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertNotNil(errorResponse)
+        }
+    }
 
 }

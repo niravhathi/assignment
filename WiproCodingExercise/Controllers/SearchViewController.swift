@@ -56,7 +56,7 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: SegueConstants.showDetailViewController, sender: nil)
+        self.performSegue(withIdentifier: SegueConstants.showDetailViewController, sender: indexPath.row)
     }
     
     func updateSearchResults(for searchController: UISearchController) {

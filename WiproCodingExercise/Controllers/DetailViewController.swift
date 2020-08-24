@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
      self.tableView.register(UINib(nibName: "ImageTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageTableViewCell")
+        self.tableView.register(UINib(nibName: "DetailListTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailListTableViewCell")
         detailViewModel.fetchDetail(type: self.type ?? .album) { (success) in
             if success {
                 DispatchQueue.main.async {
@@ -25,9 +26,13 @@ class DetailViewController: UIViewController {
                 }
             }
         }
+         self.navigationController?.navigationBar.prefersLargeTitles = false
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
 
     /*
     // MARK: - Navigation
@@ -56,33 +61,44 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let iCell = self.tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
-            if self.type == .album {
-                iCell.setImageData(type: .album, album: self.detailViewModel.albumDetail, track: nil, artist: nil)
-            } else if self.type == .artist {
-                iCell.setImageData(type: .artist, album: nil, track: nil, artist: self.detailViewModel.artistDetail)
-            } else {
-                iCell.setImageData(type: .artist, album: nil, track: self.detailViewModel.trackDetail, artist: nil)
-            }
-           return iCell
-        }
-        return UITableViewCell()
+        return self.detailViewModel.getCell(forTableView: tableView, withIndexPath: indexPath)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 0
+        return self.detailViewModel.getHeight(forTableView: tableView, withIndexPath: indexPath)
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-        switch self.type {
-        case .album:
-            return 5
-        case .artist:
-            return 5
-        case .track:
-            return 4
-        case .none:
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 2 {
+            switch self.type {
+            case .artist:
+                return "Similar"
+            case .album:
+                return "Tracks"
+            case .track:
+                return "Album"
+            case .none:
+                return ""
+            }
+        } else if section == 4 {
+           switch self.type {
+            case .artist:
+                return "Bio"
+            case .album:
+                return "Wiki"
+            case .track:
+                return "Wiki"
+            case .none:
+                return ""
+            }
+        }
+        return  ""
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 || section == 1  {
             return 0
         }
+        return 22
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
     }
 }
