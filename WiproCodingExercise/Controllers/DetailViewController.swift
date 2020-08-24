@@ -19,9 +19,11 @@ class DetailViewController: UIViewController {
 
      self.tableView.register(UINib(nibName: "ImageTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageTableViewCell")
         self.tableView.register(UINib(nibName: "DetailListTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailListTableViewCell")
+        self.tableView.isHidden = true
         detailViewModel.fetchDetail(type: self.type ?? .album) { (success) in
             if success {
                 DispatchQueue.main.async {
+                    self.tableView.isHidden = false
                     self.tableView.reloadData()
                 }
             }

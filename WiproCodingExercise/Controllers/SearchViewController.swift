@@ -10,7 +10,6 @@ import UIKit
 import KRProgressHUD
 class SearchViewController: UITableViewController, UISearchResultsUpdating {
     
-    var indicator:UIActivityIndicatorView?
     var searchViewModel: SearchViewModel = SearchViewModel()
     let searchController = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
@@ -65,60 +64,39 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
             return
         }
         activityIndicator()
-        indicator?.startAnimating()
         let index = searchBar.selectedScopeButtonIndex
         if index == 0 {            self.searchViewModel.fetchDataAlbums(searchText: searchBar.text ?? "") { (success) in
             if success {
                 DispatchQueue.main.async {
-                    self.indicator?.stopAnimating()
                     self.tableView.reloadData()
                 }
             } else {
-                DispatchQueue.main.async {
-                    self.indicator?.stopAnimating()
-                }
+                
             }
             }
         } else if index == 1 {
             self.searchViewModel.fetchDataTracks(searchText: searchBar.text ?? "") { (success) in
                 if success {
                     DispatchQueue.main.async {
-                        self.indicator?.stopAnimating()
                         self.tableView.reloadData()
                     }
                 } else {
-                    DispatchQueue.main.async {
-                        self.indicator?.stopAnimating()
-                    }
+                   
                 }
             }
         } else {
             self.searchViewModel.fetchDataArtists(searchText: searchBar.text ?? "") { (success) in
                 if success {
                     DispatchQueue.main.async {
-                        self.indicator?.stopAnimating()
                         self.tableView.reloadData()
                     }
                 } else {
-                    DispatchQueue.main.async {
-                        self.indicator?.stopAnimating()
-                    }
                 }
             }
         }
     }
     
-    func activityIndicator() {
-        if(indicator == nil) {
-            indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-            indicator?.style = UIActivityIndicatorView.Style.medium
-            indicator?.center =  CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
-            indicator?.backgroundColor = .white
-            indicator?.hidesWhenStopped = true
-            keyWindow?.addSubview(indicator!)
-        }
-        
-    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueConstants.showDetailViewController {
             let detailViewController = segue.destination as? DetailViewController

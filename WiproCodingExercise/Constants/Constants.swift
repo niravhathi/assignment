@@ -19,6 +19,7 @@ let pageNumberKey = "page"
 let formatKey = "format"
 let methodKey =  "method"
 let mbidKey = "mbid"
+var indicator:UIActivityIndicatorView?
 let keyWindow = UIApplication.shared.connectedScenes
     .filter({$0.activationState == .foregroundActive})
     .map({$0 as? UIWindowScene})
@@ -44,4 +45,14 @@ enum CellType {
     case date
     case publish
     case content
+}
+func activityIndicator() {
+    if(indicator == nil) {
+        indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        indicator?.style = UIActivityIndicatorView.Style.medium
+        indicator?.center =  CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
+        indicator?.backgroundColor = .white
+        indicator?.hidesWhenStopped = true
+        keyWindow?.addSubview(indicator!)
+    }
 }

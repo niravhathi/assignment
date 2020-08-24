@@ -22,6 +22,9 @@ class ClientAPIManager: NSObject {
     var task: URLSessionDataTask?
     func getDataWith(for URLEndPoint:String, parameters: [String: String], completionSuccess: @escaping (Data) -> Void, completionFailure: @escaping (APIError) -> Void) {
         if NetworkManager.shared.isReachableNetwork() {
+            DispatchQueue.main.async {
+                 indicator?.startAnimating()
+            }
             guard let url = URL(
                 string:URLEndPoint
                 ) else {
@@ -34,7 +37,9 @@ class ClientAPIManager: NSObject {
             }
             
             task = urlSession.dataTask(with: components.url!) { (data, response, error) in
-                
+                DispatchQueue.main.async {
+                     indicator?.stopAnimating()
+                }
                 guard error == nil
                     else {
                         return completionFailure(.parsingError(error: error?.localizedDescription ?? ""))
