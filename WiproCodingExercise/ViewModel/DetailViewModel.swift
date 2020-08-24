@@ -135,7 +135,7 @@ class DetailViewModel {
             } else if self.type == .artist {
                 iCell.setImageData(type: .artist, album: nil, track: nil, artist: self.artistDetail)
             } else {
-                iCell.setImageData(type: .artist, album: nil, track: self.trackDetail, artist: nil)
+                iCell.setImageData(type: .track, album: nil, track: self.trackDetail, artist: nil)
             }
            return iCell
         }
